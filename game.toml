@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Arc the Lad Collection - Arc the Lad II"
+id = "SLUS-01252"
+players = 2
+exe = "disc/SLUS_012.52"
+disc = "disc/Arc the Lad Collection - Arc the Lad II (USA).cue"
+discs = ["disc/Arc the Lad Collection - Arc the Lad II (USA).cue"]
+disc_serials = ["SLUS-01252"]
+load_address = "0x800C1400"
+entry_pc = "0x801676E8"
+text_size = "0x000E0800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Arc the Lad Collection - Arc the Lad II (USA).bin"
+cue_name = "Arc the Lad Collection - Arc the Lad II (USA).cue"
+boot_exe = "SLUS_012.52"
+known_sizes = [740762400]
+known_md5 = [
+  "9fcd1024ab0f5ee21ebbec2c708e70cb",
+]
+known_sha1 = [
+  "2e6d562b95920ea19a028f2a38e70df9f752b8f0",
+]
+known_crc32 = [
+  "1d3bc382",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Arc the Lad Collection - Arc the Lad II Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "ef852cba7159a9144886ca1267cb36c81f06edb44d420f971baead9a68b6c47e"

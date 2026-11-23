@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "arc-the-lad-collection-arc-the-lad-ii-psx",
+  "name": "Arc the Lad Collection - Arc the Lad II",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "arc-the-lad-collection-arc-the-lad-ii-recomp",
+  "rom_identity": {
+    "crc32": [
+      "1d3bc382"
+    ],
+    "md5": [
+      "9fcd1024ab0f5ee21ebbec2c708e70cb"
+    ],
+    "sha1": [
+      "2e6d562b95920ea19a028f2a38e70df9f752b8f0"
+    ],
+    "disc_serials": [
+      "SLUS-01252"
+    ],
+    "sizes": [
+      740762400
+    ],
+    "filenames": [
+      "Arc the Lad Collection - Arc the Lad II (USA).cue",
+      "Arc the Lad Collection - Arc the Lad II (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "ef852cba7159a9144886ca1267cb36c81f06edb44d420f971baead9a68b6c47e"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/arc-the-lad-collection-arc-the-lad-ii-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "arc-the-lad-collection-arc-the-lad-ii-*-windows-x64.zip",
+      "linux-x64": "arc-the-lad-collection-arc-the-lad-ii-*-linux-x64.zip",
+      "macos-arm64": "arc-the-lad-collection-arc-the-lad-ii-*-macos-arm64.zip",
+      "macos-x64": "arc-the-lad-collection-arc-the-lad-ii-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "arc_the_lad_collection_arc_the_lad_ii.exe",
+    "linux": "arc_the_lad_collection_arc_the_lad_ii",
+    "macos": "arc_the_lad_collection_arc_the_lad_ii"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/arc-the-lad-collection-arc-the-lad-ii-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
